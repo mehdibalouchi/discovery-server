@@ -1,0 +1,28 @@
+{
+  "commands": {
+    "select": {
+      "template": "select",
+      "arguments": [
+        "{selection}"
+      ]
+    },
+    "insert": {
+      "template": "insert",
+      "arguments": ["{element}", "{position}"]
+    },
+    "remove": {
+      "template": "remove",
+      "arguments": ["{selection}"]
+    },
+    "sort": {
+      "template": "sort",
+      "arguments": ["{selection}", "{order}"]
+    }
+  },
+  "terms": {
+    "{selection}": ["number {element}", "{element} number"],
+    "{element}": ["column", "row"],
+    "{position}": ["before {selection}", "after {selection}", "direction {selection}"],
+    "{order}": ["ascending", "descending", "by date"]
+  }
+}
