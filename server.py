@@ -3,9 +3,7 @@ from flask_socketio import SocketIO, emit
 from bert_serving.client import BertClient
 import numpy as np
 import re
-from functools import reduce
-import time
-import asyncio
+
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'secret!'
