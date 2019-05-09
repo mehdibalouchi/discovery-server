@@ -9,7 +9,7 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = 'secret!'
 socketio = SocketIO(app)
 
-bert_client = BertClient()
+bert_client = BertClient(ip='bert')
 
 
 def pre_process(tfx):
