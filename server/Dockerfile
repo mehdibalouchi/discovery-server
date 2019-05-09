@@ -9,4 +9,4 @@ unzip uncased_L-12_H-768_A-12.zip && rm uncased_L-12_H-768_A-12.zip
 
 RUN mkdir -p /app
 
-CMD bert-serving-start -model_dir /app/tmp/english_L-12_H-768_A-12/ -num_worker=1
+CMD bert-serving-start -model_dir /app/tmp/uncased_L-12_H-768_A-12/ -num_worker=1
