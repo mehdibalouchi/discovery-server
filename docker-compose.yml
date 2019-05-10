@@ -1,21 +1,14 @@
 version: '2.2'
 services:
-
-
   bert:
     build: ./server
-    networks:
-      - bert
 
   discovery:
     build: ./
     ports:
       - 5000:5000
-    networks:
-      - bert
 
 
 
-networks:
-  bert:
+
 

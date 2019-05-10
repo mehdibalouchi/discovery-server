@@ -4,7 +4,6 @@ from bert_serving.client import BertClient
 import numpy as np
 import re
 
-
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'secret!'
 socketio = SocketIO(app)
@@ -31,7 +30,8 @@ def rank(templates, query):
     # distances = list(map(lambda tmp: (tmp[0], tmp[1], tmp[2], np.inner(tmp[2], query_embedding)), template_embeddings))
     distances = list(map(lambda p: np.linalg.norm(p - query_embedding), template_embeddings))
     ranked_templates = list(
-        map(lambda x: (x[0], x[1]), list(sorted(list(zip(names, temps[:-1], distances)), key=lambda x: x[2], reverse=False ))))
+        map(lambda x: (x[0], x[1]),
+            list(sorted(list(zip(names, temps[:-1], distances)), key=lambda x: x[2], reverse=False))))
 
     return ranked_templates
 
@@ -104,4 +104,4 @@ def discover_request(data):
 
 
 if __name__ == '__main__':
-    socketio.run(app)
+    socketio.run(app, host='0.0.0.0', port=5000)
