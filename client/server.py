@@ -8,7 +8,7 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = 'secret!'
 socketio = SocketIO(app)
 
-bert_client = BertClient(ip='bert')
+bert_client = BertClient()
 
 
 def pre_process(tfx):
@@ -81,7 +81,7 @@ def generate_result(tfx, query):
 
 @app.route('/')
 def index():
-    return jsonify({'data': 'Server is up'})
+    return render_template('index.html')
 
 
 @socketio.on('test connection')

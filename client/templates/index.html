@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-135303341-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-135303341-1');
+    </script>
+
+
+    <meta charset="utf-8">
+    <meta name="description" content="">
+
+    <title>Assister Demo</title>
+
+    <link rel="import"
+        href="https://raw-dot-custom-elements.appspot.com/BrightspaceUI/dropdown/v6.6.1/dropdown/d2l-dropdown.html">
+    <link rel="import"
+        href="https://raw-dot-custom-elements.appspot.com/BrightspaceUI/dropdown/v6.6.1/dropdown/d2l-dropdown-content.html">
+    <link rel="import"
+        href="https://raw-dot-custom-elements.appspot.com/BrightspaceUI/dropdown/v6.6.1/d2l-menu/d2l-menu.html">
+    <link rel="import"
+        href="https://raw-dot-custom-elements.appspot.com/BrightspaceUI/dropdown/v6.6.1/dropdown/d2l-dropdown-menu.html">
+    <style>
+        d2l-dropdown {
+            color: var(--d2l-color-ferrite);
+            font-family: 'Lato', 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
+            letter-spacing: 0.01rem;
+            font-size: 0.95rem;
+            font-weight: 400;
+            line-height: 1.4rem;
+        }
+
+        d2l-dropdown {
+            margin-left: 15px;
+        }
+    </style>
+
+    <script src="https://cdn.jsdelivr.net/npm/handsontable@7.0.2/dist/handsontable.full.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/handsontable@7.0.2/dist/handsontable.full.min.css" rel="stylesheet"
+        media="screen">
+    <script src="/client/static/static/sheet.js"></script>
+
+</head>
+
+<body>
+    <!-- Format -->
+    <d2l-dropdown>
+        <button class="d2l-dropdown-opener">Format</button>
+        <d2l-dropdown-menu id="dropdown">
+            <d2l-menu label="Format">
+                <d2l-menu-item text="Direction" id="first-item"></d2l-menu-item>
+                <d2l-menu-item text="Number">
+                    <d2l-menu>
+                        <d2l-menu-item text="Plain text" onclick="tfx.format('current', 'text')"></d2l-menu-item>
+                        <d2l-menu-item text="Number" onclick="tfx.format('current', 'numeric')"></d2l-menu-item>
+                        <d2l-menu-item text="Date" onclick="tfx.format('current', 'date')"></d2l-menu-item>
+                    </d2l-menu>
+                </d2l-menu-item>
+        </d2l-dropdown-menu>
+    </d2l-dropdown>
+
+
+    <div class="vd-container"></div>
+    <div class="vd"></div>
+    <div id="sheet"></div>
+</body>
+
+</html>
